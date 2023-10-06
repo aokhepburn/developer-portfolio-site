@@ -1,10 +1,14 @@
 import { Metadata } from "next"
 import Link from 'next/link'
+import Script from 'next/script'
 
-export const metadata = { title: 'Next.js website' }
 export default function Page() {
+  const constructionAlert = `window.alert("this website is under construction")`
+
   return <>
-    <h1>Hello, Next.js!</h1>
+    <Script id="load-alert" strategy="beforeInteractive">{constructionAlert}</Script>
+    <h1>Alice Hepburn's Portfolio Page</h1>
+    <h1>🚧 🚧 🚧 🚧 Under Construction 🚧 🚧 🚧 🚧</h1>
     <div>
       <Link href="/projects/tideny">TideNY</Link><br />
       <Link href="/projects/thrifty">Thrifty</Link><br />
